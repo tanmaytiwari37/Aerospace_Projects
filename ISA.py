@@ -71,7 +71,7 @@ def base_conditions(layer_index):
             P = P * math.exp(-G * dh / (R * T))
         else:
             # gradient layer → pressure follows POWER law
-            P = P * (T_top / T) ** (G / (R * L))
+            P = P * (T_top / T) ** (-G / (R * L))
         
         T = T_top   # the top of this layer becomes the base of the next
     
@@ -115,26 +115,26 @@ def calculate_isa(altitude):
 
 
 # ════════════════════════════════════════════════════════════════
-# USER INTERFACE
+# USER INTERFACE (only runs when ISA.py is run directly)
 # ════════════════════════════════════════════════════════════════
-print("=" * 50)
-print("  ISA CALCULATOR — up to 86 km")
-print("=" * 50)
+if __name__ == "__main__":
+    print("=" * 50)
+    print("  ISA CALCULATOR — up to 86 km")
+    print("=" * 50)
 
-try:
-    alt = float(input("Enter altitude in meters: "))
-    T, P, rho = calculate_isa(alt)
-    
-    # convert to friendly units for display
-    print(f"\nResults at {alt} m ({alt/1000:.1f} km):")
-    print(f"  Temperature : {T:.2f} K  ({T - 273.15:.2f} °C)")
-    print(f"  Pressure    : {P:.2f} Pa ({P/100:.2f} hPa)")
-    print(f"  Density     : {rho:.6f} kg/m³")
-    
-    # pilot insight
-    pct = (rho / 1.225) * 100
-    print(f"\n[Density is {pct:.2f}% of sea level]")
+    try:
+        alt = float(input("Enter altitude in meters: "))
+        T, P, rho = calculate_isa(alt)
+        
+        # convert to friendly units for display
+        print(f"\nResults at {alt} m ({alt/1000:.1f} km):")
+        print(f"  Temperature : {T:.2f} K  ({T - 273.15:.2f} °C)")
+        print(f"  Pressure    : {P:.2f} Pa ({P/100:.2f} hPa)")
+        print(f"  Density     : {rho:.6f} kg/m³")
+        
+        # pilot insight
+        pct = (rho / 1.225) * 100
+        print(f"\n[Density is {pct:.2f}% of sea level]")
 
-except ValueError as e:
-    print(f"Error: {e}")
-
+    except ValueError as e:
+        print(f"Error: {e}")

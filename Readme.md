@@ -143,6 +143,8 @@ Results at 7000.0 m (7.0 km):
 ## 📁 Project Structure
 ```
 Aerospace_Projects/
+├── .gitignore
+├──Graph.png            # Output in graph
 ├── ISA.py              # Main calculator
 └── README.md
 ```
