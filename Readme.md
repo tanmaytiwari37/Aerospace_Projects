@@ -180,7 +180,7 @@ Aerospace_Projects/
 
 ## 📄 License
 
-This project is licensed under the MIT License — feel free to use, modify, and learn from it.
----
+This project is licensed under the **MIT License** — feel free to use, modify, and learn from it.
 
+---
 <sub>Built as part of independent study alongside coursework. Not affiliated with any commercial aviation or meteorological service.</sub>
