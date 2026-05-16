@@ -178,6 +178,9 @@ Aerospace_Projects/
 - 📧 itanmaytiwari37@gmail.com
 - 🎯 Currently exploring: atmospheric modeling, computational fluid dynamics, and ML for aerospace systems
 
+## 📄 License
+
+This project is licensed under the MIT License — feel free to use, modify, and learn from it.
 ---
 
 <sub>Built as part of independent study alongside coursework. Not affiliated with any commercial aviation or meteorological service.</sub>
